@@ -309,13 +309,13 @@ class Series(BaseObject):
     def latest_month(self):
         if not self._indexes['monthly']:
             return None
-        return max([i.date for i in self._indexes['monthly'].values()])
+        return max(i.date for i in self._indexes['monthly'].values())
 
     @property
     def latest_year(self):
         if not self._indexes['annual']:
             return None
-        return max([i.year for i in self._indexes['annual'].values()])
+        return max(i.year for i in self._indexes['annual'].values())
 
     def get_index_by_date(self, date, period_type='annual'):
         try:
